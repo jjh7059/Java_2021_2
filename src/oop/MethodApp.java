@@ -34,6 +34,38 @@ public class MethodApp {
 		//메소드의 매개변수에 값을 정상적인 값이 전달되어야만 메소드 호출 가능
 		method.printTwo(50);
 		method.printTwo(80);
+		method.printTwo(-30);
 		System.out.println("=========================================================");
+		
+		method.printThree(55, 80);
+		method.printThree(2, 49);
+		method.printThree(70, 33);
+		System.out.println("=========================================================");
+		
+		//메소드 호출시 반환되는 결과값을 변수에 저장
+		//반환되는 결과값을 지속적으로 사용하고자 할 경우 변수에 저장
+		int total = method.returnTot(36, 79);
+		//입력 및 출력 명령은 프로그램에서 작성 - 메소드에서는 입출력 명령을 미작성
+		System.out.println("메소드 호출 결과 = " + total);
+		
+		//메소드 호출시 반환되는 결과값 출력 - 반환값 일시적 사용
+		System.out.println("합계 = " + method.returnTot(40, 80));
+		System.out.println("=========================================================");
+		
+		boolean result = method.isOddEven(10);
+		if(result) {  //result 변수값이 true인 경우
+			System.out.println("매개변수에 전달된 값은 [짝수]입니다.");
+		} else {
+			System.out.println("매개변수에 전달된 값은 [홀수]입니다.");
+		}
+		
+		//if 구문의 조건 대신 논리값을 반환하는 메소드 호출 가능
+		if(method.isOddEven(11)) {
+			System.out.println("매개변수에 전달된 값은 [짝수]입니다.");
+		} else {
+			System.out.println("매개변수에 전달된 값은 [홀수]입니다.");
+		}
+		System.out.println("=========================================================");
+		
 	}
 }
