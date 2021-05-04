@@ -16,19 +16,22 @@ public class CarApp {
 		
 		//참조변수를 이용하여 참조변수에 저장된 객체(인스턴스)의 요소에 접근하여 사용
 		// . 연산자를 이용하여 객체(인스턴스)의 요소에 접근
-		carOne.aliasName = "티코";
-		carOne.engineStatus = false;
-		carOne.currentSpeed = 0;
+		//문제점)인스턴스로 필드에 직접적인 접근을 허용할 경우 비정상적인 값 저장에
+		//대한 제한을 할 수 없어 실행 결과가 잘못되는 오류 발생
+		//Getter, Setter 메소드를 호출하여 필드를 간접적으로 사용
+		carOne.setAliasName("티코");
+		carOne.setEngineStatus(false);
+		carOne.setCurrentSpeed(0);
 		
-		System.out.println("첫번째 자동차의 별칭 = " + carOne.aliasName);
-		System.out.println("첫번째 자동차의 엔진상태 = " + carOne.engineStatus);
-		System.out.println("첫번째 자동차의 현재속도 = " + carOne.currentSpeed);
+		System.out.println("첫번째 자동차의 별칭 = " + carOne.getAliasName());
+		System.out.println("첫번째 자동차의 엔진상태 = " + carOne.isEngineStatus());
+		System.out.println("첫번째 자동차의 현재속도 = " + carOne.getCurrentSpeed());
 		System.out.println("=========================================================");
 		
-		carTwo.aliasName = "싼타페";
-		System.out.println("두번째 자동차의 별칭 = " + carTwo.aliasName);
-		System.out.println("두번째 자동차의 엔진상태 = " + carTwo.engineStatus);
-		System.out.println("두번째 자동차의 현재속도 = " + carTwo.currentSpeed);
+		carTwo.setAliasName("싼타페");
+		System.out.println("두번째 자동차의 별칭 = " + carTwo.getAliasName());
+		System.out.println("두번째 자동차의 엔진상태 = " + carTwo.isEngineStatus());
+		System.out.println("두번째 자동차의 현재속도 = " + carTwo.getCurrentSpeed());
 		System.out.println("=========================================================");
 		
 		
