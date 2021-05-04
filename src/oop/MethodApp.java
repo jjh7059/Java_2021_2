@@ -67,5 +67,29 @@ public class MethodApp {
 		}
 		System.out.println("=========================================================");
 		
+		String nameResult = method.nameHello("홍길동");
+		System.out.println(nameResult);
+		System.out.println(method.nameHello("임꺽정"));
+		System.out.println("=========================================================");
+		
+		//메소드를 호출하여 반환된 배열을 참조변수 저장
+		int[] num = method.returnArray();
+		System.out.print("반환된 요소값 >> ");
+		
+		for(int temp:num) {
+			System.out.print(temp + " ");
+		}
+		System.out.println();
+		System.out.println("=========================================================");
+		
+		//메소드의 매개변수에 값이 정상적으로 전달되지 않은 경우 메소드 호출 
+		System.out.println("합계 = " + method.sumOne(10, 20, 30));
+		System.out.println("=========================================================");
+		
+		System.out.println("배열 요소의 합계 = " + method.sumTwo(new int[] {10,20,30}));
+		System.out.println("=========================================================");
+		
+		System.out.println("배열 요소의 합계 = " + method.sumThree(10,20,30));
+		System.out.println("=========================================================");
 	}
 }
