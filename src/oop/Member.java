@@ -1,14 +1,34 @@
 package oop;
 
+//this : 메소드에 숨겨져 있는 매개변수
+//  메소드를 호출한 인스턴스 정보를 저장하기 위한 참조변수
+//  인스턴스가 메소드를 호출한 경우 호출 인스턴스의 정보를 자동으로 전달받아 저장
+//  메소드의 명령에서 인스턴스 필드 또는 메소드에 접근하기 위해 사용
+//  this 매개변수를 표현하지 않아도 인스턴스 필드 또는 메소드에 접근 가능
+
+//메소드에 this 매개변수가 필요한 이유
+//  필드는 인스턴스마다 메모리에 따로 생성되지만 메소드는 인스턴스의 갯수에 상관없이
+//  메모리에 하나만 생성 - 프로토타입 클래스(Prototype Class)
+//  메소드에서 필드 또는 메소드에 접근할 경우 명확하게 인스턴스를 구분하여 필드 또는 메소드에 접근하기
+//  위해 this 필요
+
 //회원정보(아이디, 이름, 이메일)를 저장하기 위한 클래스 : VO(Value Object) 클래스 
 //(필드, getter, setter만 존재)
 
+//this 매개변수를 사용하는 경우
+//1. 메소드에서 매개변수와 필드의 이름이 같은 경우 this를 이용하여 필드를 표현 (주 목적)
+//  this가 없으면 매개변수로 처리
+//2. 생성자에서 다른 생성자를 호출하기 위해 this 사용
+//  this로 생성자를 호출하는 명령 전에 다른 명령이 작성될 경우 에러 발생
+//3. 이벤트 처리 프로그램 또는 다중 스레드 프로그램의 메소드에서 인스턴스를 표현하여 처리
+
 public class Member {
-	
 	//필드(Field)
-	private String id;
-	private String name;
-	private String email;
+	//  인스턴스 생성시 필드에 기본값 자동 저장(숫자형:0, 논리형:false, 참조형:Null)
+	//  인스턴스 생성시 필드에 저장된 기본값 변경 가능
+	private String id = "NoId";
+	private String name = "NoName";
+	private String email = "NoEmail";
 	
 	//생성자(Constructor)
 	//생성자를 선언하지 않으면 내부적으로 기본 생서자가 제공
@@ -25,6 +45,14 @@ public class Member {
 	// 매개변수가 없는 생성자 자동 완성 : [ctrl] + [space] >> constructor 선택
 	public Member() {
 		// TODO Auto-generated constructor stub
+		/*
+		id = "NoId";
+		name = "NoName";
+		email = "NoEmail";
+		*/
+		
+		//Member(String, String, String) 생성자를 호출하여 초기화 작업
+		//this("NoId", "NoName", "NoEmail");
 	}
 	
 	//매개변수가 선언된 생성자
