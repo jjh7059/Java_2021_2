@@ -22,7 +22,7 @@ public class Student {
 	// => 클래스로 접근하여 사용
 	private static int total = 0;
 	
-	//생성자(Constructor) :인스턴스를 만들어주는 특별한 메소드
+	//생성자(Constructor) : 인스턴스를 만들어주는 특별한 메소드
 	// => 인스턴스 필드에 필요한 기본값이 아닌 초기값을 저장하기 위해 선언
 	
 	public Student() {
