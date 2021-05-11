@@ -23,7 +23,23 @@ public class EmployeeRegular extends Employee {
 	}
 	
 	//급여를 계산하여 반환하는 메소드
+	/*
 	public int computeSalary() {
 		return annualSalary / 12;
 	}
+	*/
+	
+	@Override
+	public int computePay() {
+		return annualSalary / 12;
+	}
+	
+	//final 메소드를 오버라이드 선언할 경우 에러 발생
+	/*
+	@Override
+	public int computeIncentive() {
+		return 100_000_000;
+	}
+	*/
+	
 }
