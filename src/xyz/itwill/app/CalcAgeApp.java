@@ -1,5 +1,6 @@
 package xyz.itwill.app;
 
+//java.lang 패키지의 자료형은 기본적으로 import 설정
 import java.util.Date;
 import java.util.Scanner;
 
